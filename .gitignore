@@ -43,6 +43,9 @@ logs/
 Thumbs.db
 .DS_Store
 
+# Markdown files (不上传文档)
+*.md
+
 
 
 
