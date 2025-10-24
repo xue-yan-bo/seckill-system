@@ -169,27 +169,51 @@ onMounted(() => {
 <style scoped>
 .seckill {
   padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .page-title {
   margin-bottom: 30px;
   font-size: 32px;
   color: #333;
+  text-align: center;
 }
 
 .seckill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
   margin-bottom: 20px;
 }
 
+@media (max-width: 1200px) {
+  .seckill-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .seckill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .seckill-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .seckill-card {
-  transition: transform 0.3s;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .seckill-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .card-content {
@@ -199,9 +223,9 @@ onMounted(() => {
 
 .product-image {
   position: relative;
-  height: 300px;
-  margin-bottom: 20px;
-  border-radius: 8px;
+  height: 220px;
+  margin-bottom: 15px;
+  border-radius: 8px 8px 0 0;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -246,16 +270,21 @@ onMounted(() => {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 0 15px 15px;
 }
 
 .product-name {
-  font-size: 18px;
-  margin-bottom: 15px;
+  font-size: 16px;
+  margin-bottom: 12px;
   color: #333;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .price-section {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .seckill-price {
@@ -270,13 +299,13 @@ onMounted(() => {
 }
 
 .seckill-price .price {
-  font-size: 32px;
+  font-size: 28px;
   color: #ff4d4f;
   font-weight: bold;
 }
 
 .stock-section {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .stock-section > span {
@@ -286,16 +315,18 @@ onMounted(() => {
 }
 
 .time-section {
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: #f5f5f5;
-  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 8px;
+  font-size: 12px;
 }
 
 .time-item {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
+  font-size: 12px;
 }
 
 .time-item:last-child {
@@ -308,8 +339,11 @@ onMounted(() => {
 
 .seckill-btn {
   width: 100%;
-  font-size: 18px;
-  height: 50px;
+  font-size: 16px;
+  height: 45px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 </style>
 
