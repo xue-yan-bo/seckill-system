@@ -351,8 +351,13 @@ app.post('/api/order/cancel/:id', (req, res) => {
   });
 });
 
-const PORT = 8083;
-app.listen(PORT, () => {
+// 健康检查端点
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: Date.now() });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
   console.log('========================================');
   console.log(`Mock API服务器启动成功！`);
   console.log(`地址: http://localhost:${PORT}`);

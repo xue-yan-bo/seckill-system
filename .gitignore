@@ -46,6 +46,10 @@ Thumbs.db
 # Markdown files (不上传文档)
 *.md
 
+# Docker
+.docker/
+docker-compose.override.yml
+.env
 
-
-
+# Text files (部署指南)
+*.txt
