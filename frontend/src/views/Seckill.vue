@@ -181,27 +181,38 @@ onMounted(() => {
 }
 
 .seckill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
   margin-bottom: 20px;
+  width: 100%;
+  justify-content: flex-start !important;
+}
+
+.seckill-grid .seckill-card {
+  flex: 0 0 calc(25% - 15px) !important;
+  max-width: calc(25% - 15px) !important;
+  min-width: 280px;
 }
 
 @media (max-width: 1200px) {
-  .seckill-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .seckill-grid .seckill-card {
+    flex: 0 0 calc(33.333% - 14px) !important;
+    max-width: calc(33.333% - 14px) !important;
   }
 }
 
 @media (max-width: 900px) {
-  .seckill-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .seckill-grid .seckill-card {
+    flex: 0 0 calc(50% - 10px) !important;
+    max-width: calc(50% - 10px) !important;
   }
 }
 
 @media (max-width: 600px) {
-  .seckill-grid {
-    grid-template-columns: 1fr;
+  .seckill-grid .seckill-card {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
   }
 }
 
@@ -347,3 +358,6 @@ onMounted(() => {
 }
 </style>
 
+/ *   C a c h e   B u s t e r :   % R A N D O M %   * / 
+ 
+ 
